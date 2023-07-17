@@ -3,6 +3,7 @@ NAME		=	ClapTrap
 CXX			=	c++
 
 SRCS		=	ClapTrap.cpp \
+				ScavTrap.cpp \
 				main.cpp
 
 CXXFLAGS	=	-Wall -Wextra -Werror -g -std=c++98 #-fsanitize=address

@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <string>
+# include "ScavTrap.hpp"
 
 class ClapTrap {
 	private:
@@ -26,8 +27,6 @@ class ClapTrap {
 		int			getHitPoints(void) const;
 		int			getEnergyPoints(void) const;
 		int			getAttackDamage(void) const;
-
 };
-
 
 #endif

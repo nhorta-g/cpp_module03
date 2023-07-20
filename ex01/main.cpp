@@ -1,18 +1,19 @@
 #include "ClapTrap.hpp"
 
 int	main(void) {
-	ClapTrap bot1("David");
-	ClapTrap bot2("John");
+	ClapTrap clap1("David");
+	ClapTrap clap2("John");
+	ClapTrap scav1("John");
 
 	for (int i = 1; i < 10; i++) {
 		std::cout << std::endl << "ROUND " << i << std::endl;
-		bot1.attack(bot2.getName());
-		bot2.attack(bot1.getName());
-		if (bot1.getEnergyPoints())
-			bot2.takeDamage(bot1.getAttackDamage());
-		bot2.beRepaired(bot1.getAttackDamage());
-		if (bot2.getEnergyPoints())
-			bot1.takeDamage(bot2.getAttackDamage());
-		bot1.beRepaired(bot2.getAttackDamage());
+		clap1.attack(scav1.getName());
+		clap2.attack(scav1.getName());
+		if (scav1.getEnergyPoints())
+			scav1.takeDamage(clap1.getAttackDamage());
+		scav1.beRepaired(clap1.getAttackDamage());
+		if (scav1.getEnergyPoints())
+			clap1.takeDamage(clap2.getAttackDamage());
+		scav1.beRepaired(clap2.getAttackDamage());
 	}
 }

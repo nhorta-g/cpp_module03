@@ -3,10 +3,9 @@
 
 # include <iostream>
 # include <string>
-# include "ScavTrap.hpp"
 
 class ClapTrap {
-	private:
+	protected:
 		std::string	_name;
 		int			_hit_points;
 		int			_energy_points;
@@ -27,6 +26,10 @@ class ClapTrap {
 		int			getHitPoints(void) const;
 		int			getEnergyPoints(void) const;
 		int			getAttackDamage(void) const;
+		void		setName(const std::string &name);
+		void		setHitPoints(int hitPoints);
+		void		setEnergyPoints(int energyPoints);
+		void		setAttackDamage(int attackDamage);
 };
 
 #endif

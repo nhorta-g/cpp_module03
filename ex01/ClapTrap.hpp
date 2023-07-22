@@ -31,5 +31,4 @@ class ClapTrap {
 		void		setEnergyPoints(int energyPoints);
 		void		setAttackDamage(int attackDamage);
 };
-
 #endif

@@ -2,14 +2,14 @@
 
 ///////////CONSTRUCTORS////////////
 ClapTrap::ClapTrap (void) {
-	std::cout << "ClapTrap constructor called" << std::endl;
+	std::cout << "ClapTrap cdefault constructor called" << std::endl;
 	_hit_points = 10;
 	_energy_points = 10;
 	_attack_damage = 0;
 }
 
 ClapTrap::ClapTrap (std::string name) {
-	std::cout << "ClapTrap constructor called" << std::endl;
+	std::cout << "ClapTrap constructor called for: " << name << std::endl;
 	_name = name;
 	_hit_points = 10;
 	_energy_points = 10;
@@ -32,7 +32,7 @@ ClapTrap& ClapTrap::operator = (const ClapTrap &original) {
 }
 
 ClapTrap::~ClapTrap (void) {
-	std::cout << "ClapTrap destructor called" << std::endl;
+	std::cout << "ClapTrap destructor called for: "<< _name << std::endl;
 }
 
 ///////SUBJECT MEMBER FUNCTIONS////////

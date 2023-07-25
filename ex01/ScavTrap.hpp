@@ -4,7 +4,7 @@
 # include "ClapTrap.hpp"
 # include "ScavTrap.hpp"
 
-class ScavTrap: ClapTrap {
+class ScavTrap: public ClapTrap {
 	public:
 		ScavTrap (const std::string name);
 		~ScavTrap (void);

@@ -2,18 +2,18 @@
 
 ///////////CONSTRUCTORS////////////
 ClapTrap::ClapTrap (void) {
-	std::cout << "ClapTrap cdefault constructor called" << std::endl;
-	_hit_points = 10;
-	_energy_points = 10;
-	_attack_damage = 0;
+	std::cout << "ClapTrap default constructor called" << std::endl;
+	_hit_points = 50;
+	_energy_points = 20;
+	_attack_damage = 10;
 }
 
 ClapTrap::ClapTrap (std::string name) {
 	std::cout << "ClapTrap constructor called for: " << name << std::endl;
 	_name = name;
-	_hit_points = 10;
-	_energy_points = 10;
-	_attack_damage = 0;
+	_hit_points = 50;
+	_energy_points = 20;
+	_attack_damage = 10;
 }
 
 ClapTrap::ClapTrap (const ClapTrap &original) {
@@ -37,33 +37,38 @@ ClapTrap::~ClapTrap (void) {
 
 ///////SUBJECT MEMBER FUNCTIONS////////
 void ClapTrap::attack(const std::string& target) {
-	if (_energy_points > 0 && _hit_points > 0) {
+	if (_energy_points > 0) {
 		_energy_points--;
-		std::cout << "ClapTrap " << _name << " attacks " << target
+		std::cout << "Trap " << _name << " attacks " << target
 			<< ", causing " << _attack_damage << " points of damage!"
 			<< std::endl;
 	}
-	else if (_energy_points == 0)
-		std::cout<< "ClapTrap " << _name << " has no energy left to attack " << std::endl;
-	else if (_hit_points == 0)
-		std::cout<< "ClapTrap " << _name << " Is dead, it has  " << std::endl;
+	else if (_energy_points < 1)
+		std::cout<< "Trap " << _name << " has no energy left to attack " << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
-		std::cout << "ClapTrap " << _name << " received "
+		std::cout << "Trap " << _name << " received "
 			<< amount << " points of damage!" << std::endl;
 		_hit_points = _hit_points - amount;
+
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
-	if (_energy_points > 0) {
+	if (_hit_points < 1)
+	{
+		std::cout << "Trap " << _name << " is dead, game over for him!"
+			<< std::endl;
+	return;
+	}
+	else if (_energy_points > 0) {
 		_energy_points--;
 		_hit_points = _hit_points + amount;
-		std::cout << "ClapTrap " << _name << " received "
+		std::cout << "Trap " << _name << " received "
 			<< amount << " points of damage!" << std::endl;
 	}
-	else
-		std::cout<< "ClapTrap " << _name << " has no energy left to attack " << std::endl;
+	else if (_energy_points < 1)
+		std::cout << "Trap " << _name << " has no energy left to attack " << std::endl;
 }
 
 ///////GETTERS & SETTERS///////

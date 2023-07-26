@@ -44,11 +44,12 @@ void ClapTrap::attack(const std::string& target) {
 			<< std::endl;
 	}
 	else if (_energy_points < 1)
-		std::cout<< "Trap " << _name << " has no energy left to attack " << std::endl;
+		std::cout<< "Trap " << _name << " has no energy left to attack "
+			<< std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
-		std::cout << "Trap " << _name << " received "
+		std::cout << "Ouch! Trap " << _name << " sufered "
 			<< amount << " points of damage!" << std::endl;
 		_hit_points = _hit_points - amount;
 
@@ -64,11 +65,13 @@ void ClapTrap::beRepaired(unsigned int amount) {
 	else if (_energy_points > 0) {
 		_energy_points--;
 		_hit_points = _hit_points + amount;
-		std::cout << "Trap " << _name << " received "
-			<< amount << " points of damage!" << std::endl;
+		std::cout << "Trap " << _name << " repaired " << amount <<
+			" points! He know has: " << _hit_points << " hit points"
+				<< std::endl;
 	}
 	else if (_energy_points < 1)
-		std::cout << "Trap " << _name << " has no energy left to attack " << std::endl;
+		std::cout << "Trap " << _name << " has no energy left to attack "
+			<< std::endl;
 }
 
 ///////GETTERS & SETTERS///////

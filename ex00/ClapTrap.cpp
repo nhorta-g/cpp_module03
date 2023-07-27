@@ -1,5 +1,6 @@
 #include "ClapTrap.hpp"
 
+///////////CONSTRUCTORS////////////
 ClapTrap::ClapTrap (void) {
 	std::cout << "ClapTrap constructor called" << std::endl;
 	_hit_points = 10;
@@ -43,7 +44,8 @@ void ClapTrap::attack(const std::string& target) {
 			<< std::endl;
 	}
 	else if (_energy_points == 0)
-		std::cout<< "ClapTrap " << _name << " has no energy left to attack " << std::endl;
+		std::cout<< "ClapTrap " << _name << " has no energy left to attack "
+			<< std::endl;
 	else if (_hit_points == 0)
 		std::cout<< "ClapTrap " << _name << " Is dead, it has  " << std::endl;
 }
@@ -62,7 +64,8 @@ void ClapTrap::beRepaired(unsigned int amount) {
 			<< amount << " points of damage!" << std::endl;
 	}
 	else
-		std::cout<< "ClapTrap " << _name << " has no energy left to attack " << std::endl;
+		std::cout<< "ClapTrap " << _name << " has no energy left to attack "
+			<< std::endl;
 }
 
 ///////GETTERS & SETTERS///////
@@ -80,4 +83,20 @@ int ClapTrap::getEnergyPoints(void) const {
 
 int ClapTrap::getAttackDamage(void) const {
 	return(_attack_damage);
+}
+
+void ClapTrap::setName(const std::string &name) {
+	_name = name;
+}
+
+void ClapTrap::setHitPoints(int hitPoints) {
+	_hit_points = hitPoints;
+}
+
+void ClapTrap::setEnergyPoints(int energy_points) {
+	_energy_points = energy_points;
+}
+
+void ClapTrap::setAttackDamage(int attack_damage) {
+	_attack_damage = attack_damage;
 }

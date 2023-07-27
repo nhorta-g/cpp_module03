@@ -4,15 +4,15 @@
 ClapTrap::ClapTrap (void) {
 	std::cout << "ClapTrap default constructor called" << std::endl;
 	_hit_points = 50;
-	_energy_points = 20;
+	_energy_points = 30;
 	_attack_damage = 10;
 }
 
 ClapTrap::ClapTrap (std::string name) {
-	std::cout << "ClapTrap constructor called for: " << name << std::endl;
+	std::cout << "ClapTrap constructor called for " << name << std::endl;
 	_name = name;
 	_hit_points = 50;
-	_energy_points = 20;
+	_energy_points = 30;
 	_attack_damage = 10;
 }
 
@@ -32,7 +32,7 @@ ClapTrap& ClapTrap::operator = (const ClapTrap &original) {
 }
 
 ClapTrap::~ClapTrap (void) {
-	std::cout << "ClapTrap destructor called for: "<< _name << std::endl;
+	std::cout << "ClapTrap destructor called for "<< _name << std::endl;
 }
 
 ///////SUBJECT MEMBER FUNCTIONS////////
@@ -49,10 +49,11 @@ void ClapTrap::attack(const std::string& target) {
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
-		std::cout << "Ouch! Trap " << _name << " sufered "
-			<< amount << " points of damage!" << std::endl;
-		_hit_points = _hit_points - amount;
-
+		std::cout << "Ouch! Trap " << _name << " suffered "<< (signed int)amount
+		<< " points of damage! Before he had " << _hit_points <<
+		" hit points and now he has " << (signed int)_hit_points - (signed int)amount <<
+		" hit points" << std::endl;
+		_hit_points = _hit_points - (signed int)amount;
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
@@ -63,11 +64,11 @@ void ClapTrap::beRepaired(unsigned int amount) {
 	return;
 	}
 	else if (_energy_points > 0) {
+		std::cout << "Trap " << _name << " got some repairs of " <<
+		amount << " hit points! He know has " << _hit_points + amount
+		<< " hit points" << std::endl;
 		_energy_points--;
 		_hit_points = _hit_points + amount;
-		std::cout << "Trap " << _name << " repaired " << amount <<
-			" points! He know has: " << _hit_points << " hit points"
-				<< std::endl;
 	}
 	else if (_energy_points < 1)
 		std::cout << "Trap " << _name << " has no energy left to attack "

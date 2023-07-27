@@ -4,9 +4,9 @@
 ScavTrap::ScavTrap(const std::string name) {
 	_name = name;
 	_hit_points = 100;
-	_energy_points = 50;
+	_energy_points = 5;
 	_attack_damage = 20;
-	std::cout << "ScavTrap constructor called for: "
+	std::cout << "ScavTrap constructor called for "
 		<< _name << std::endl;
 }
 

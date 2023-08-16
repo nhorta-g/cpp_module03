@@ -14,9 +14,10 @@ int	main(void) {
 		"Energy points: " << clap.getEnergyPoints() << std::endl << "Attack damage: "
 		<< clap.getAttackDamage() << std::endl;
 
+	scav.guardGate();
 	int i = 1;
 	std::cout << std::endl;
-	while (scav.getHitPoints() && clap.getHitPoints() &&
+	while (scav.getHitPoints() > 0 && clap.getHitPoints() > 0&&
 		(scav.getEnergyPoints() || clap.getEnergyPoints())) {
 		std::cout << "ROUND " << i << std::endl;
 
@@ -28,11 +29,11 @@ int	main(void) {
 			}
 			else
 				std::cout << "Trap " << clap.getName() <<
-				" can't attack because he's out of energie" << std::endl;
+				" can't attack or anything, he's out of energie!" << std::endl;
 		}
 		else
 			std::cout << "Trap " << clap.getName() <<
-				" can't attack because he's dead" << std::endl;
+				" is dead!!!" << std::endl;
 
 		std::cout << std::endl;
 
@@ -44,11 +45,11 @@ int	main(void) {
 			}
 			else
 				std::cout << "Trap " << scav.getName() <<
-				" can't attack because he's out of energie" << std::endl;
+				" can't attack or anything, he's out of energie!" << std::endl;
 		}
 		else
 			std::cout << "Trap " << scav.getName() <<
-				" can't attack because he's dead" << std::endl;
+				" is dead!!!" << std::endl;
 		std::cout << std::endl;
 		i++;
 	}

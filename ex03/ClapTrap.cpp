@@ -49,10 +49,11 @@ void ClapTrap::attack(const std::string& target) {
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
-		std::cout << "Ouch! Trap " << _name << " suffered "<< (signed int)amount
-		<< " points of damage! Before he had " << _hit_points <<
-		" hit points and now he has " << (signed int)_hit_points - (signed int)amount <<
-		" hit points" << std::endl;
+		std::cout << "Ouch! Trap " << _name << " suffered "<<
+		(signed int)amount << " points of damage! Before he had "
+		<< _hit_points << " hit points and now he has " <<
+		(signed int)_hit_points - (signed int)amount << " hit points"
+		<< std::endl;
 		_hit_points = _hit_points - (signed int)amount;
 }
 
@@ -92,7 +93,7 @@ int ClapTrap::getAttackDamage(void) const {
 	return (_attack_damage);
 }
 
-void ClapTrap::setName(const std::string &name) {
+void ClapTrap::setName(const std::string name) {
 	_name = name;
 }
 

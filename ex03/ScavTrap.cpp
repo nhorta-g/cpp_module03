@@ -3,7 +3,7 @@
 ///////////CONSTRUCTORS////////////
 
 ScavTrap::ScavTrap(void) {
-	_hit_points = 100;
+	_hit_points = 90;
 	_energy_points = 10;
 	_attack_damage = 20;
 	std::cout << "ScavTrap default constructor called for "
@@ -12,7 +12,7 @@ ScavTrap::ScavTrap(void) {
 
 ScavTrap::ScavTrap(const std::string name) {
 	_name = name;
-	_hit_points = 100;
+	_hit_points = 90;
 	_energy_points = 10;
 	_attack_damage = 20;
 	std::cout << "ScavTrap constructor called for "

@@ -1,4 +1,4 @@
-#ifndef DIAMONDRAP_HPP
+#ifndef DIAMONDTRAP_HPP
 # define DIAMONDTRAP_HPP
 
 # include "ClapTrap.hpp"
@@ -9,7 +9,7 @@ class DiamondTrap: virtual public ScavTrap, virtual public FragTrap {
 	public:
 		DiamondTrap (void);
 		~DiamondTrap (void);
-		//DiamondTrap (const DiamondTrap &original);
+		DiamondTrap (const DiamondTrap &original);
 		DiamondTrap &operator = (const DiamondTrap &original);
 
 		DiamondTrap (const std::string name);

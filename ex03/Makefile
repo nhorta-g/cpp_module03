@@ -2,9 +2,10 @@ NAME		=	DiamondTrap
 
 CXX			=	c++
 
-SRCS		=	ClapTrap. cpp \
+SRCS		=	ClapTrap.cpp \
 				FragTrap.cpp \
 				DiamondTrap.cpp \
+				ScavTrap.cpp \
 				main.cpp
 
 CXXFLAGS	=	-Wall -Wextra -Werror -g -std=c++98 #-fsanitize=address

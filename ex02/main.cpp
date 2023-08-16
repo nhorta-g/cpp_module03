@@ -6,11 +6,11 @@ int	main(void) {
 
 	frag.highFivesGuys();
 	std::cout << std::endl << "Ladies and gentelmen, the fight will now begin! "
-		<< std::endl << std::endl << "In one corner... we have this mighty fragTrap called "
+		<< std::endl << std::endl << "In this corner... we have this mighty fragTrap called "
 		<< frag.getName() << std::endl << "Hit points:    " << frag.getHitPoints()
 		<< std::endl << "Energy points: " << frag.getEnergyPoints() << std::endl
 		<< "Attack damage: " << frag.getAttackDamage() << std::endl <<std::endl <<
-		"And in the other corner... we have this poor clapTrap called " << clap.getName()
+		"And on that corner... we have this poor clapTrap called " << clap.getName()
 		<< std::endl << "Hit points:    " << clap.getHitPoints() << std::endl <<
 		"Energy points: " << clap.getEnergyPoints() << std::endl << "Attack damage: "
 		<< clap.getAttackDamage() << std::endl;

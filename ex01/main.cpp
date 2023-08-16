@@ -5,11 +5,11 @@ int	main(void) {
 	ClapTrap clap("David");
 
 	std::cout << std::endl << "Ladies and gentelmen, the fight will now begin! "
-		<< std::endl << std::endl << "in one corner we have this mighty ScavTrap called "
+		<< std::endl << std::endl << "in this corner... we have this mighty ScavTrap called "
 		<< scav.getName() << std::endl << "Hit points:    " << scav.getHitPoints()
 		<< std::endl << "Energy points: " << scav.getEnergyPoints() << std::endl
 		<< "Attack damage: " << scav.getAttackDamage() << std::endl <<std::endl <<
-		"in the other corner we have this poor clapTrap called " << clap.getName()
+		"And on that corner... we have this poor clapTrap called " << clap.getName()
 		<< std::endl << "Hit points:    " << clap.getHitPoints() << std::endl <<
 		"Energy points: " << clap.getEnergyPoints() << std::endl << "Attack damage: "
 		<< clap.getAttackDamage() << std::endl;

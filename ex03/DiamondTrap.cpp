@@ -5,13 +5,13 @@ DiamondTrap::DiamondTrap (void) {
 	std::cout << "DiamondTrap standard constructor called. "
 		<< std::endl;
 }
-/*
+
 DiamondTrap::DiamondTrap (const DiamondTrap &original) {
 	*this = original;
 	std::cout << "DiamondTrap copy constructor called for: "
-		<< original._name << std::endl;
+		<< _name << std::endl;
 }
-*/
+
 DiamondTrap& DiamondTrap::operator = (const DiamondTrap &original) {
 	std::cout << "Diamondtrap assignment operator constructor called for: "
 		<< original._name << std::endl;
@@ -43,7 +43,7 @@ DiamondTrap::DiamondTrap(const std::string name) {
 ///////SUBJECT MEMBER FUNCTIONS////////
 void DiamondTrap::whoAmI(void) {
 	std::cout << "Diamond name is: " << _name << std::endl;
-	std::cout << "ClapTrap name is: " << this->getName()
+	std::cout << "ClapTrap name is: " << ClapTrap::_name
 		<< std::endl;
 }
 

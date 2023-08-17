@@ -6,7 +6,7 @@ DiamondTrap::DiamondTrap (void) {
 		<< std::endl;
 }
 
-DiamondTrap::DiamondTrap (const DiamondTrap &original) {
+DiamondTrap::DiamondTrap (const DiamondTrap &original) : ClapTrap(), ScavTrap(), FragTrap() {
 	*this = original;
 	std::cout << "DiamondTrap copy constructor called for: "
 		<< _name << std::endl;
@@ -28,7 +28,8 @@ DiamondTrap::~DiamondTrap (void) {
 }
 
 DiamondTrap::DiamondTrap(const std::string name) {
-	this->setName(name + "_clap_name");
+	_name = (name + "_clap_name");
+	ClapTrap::_name = name;
 
 	ScavTrap temp_scav(name);
 	FragTrap temp_frag(name);

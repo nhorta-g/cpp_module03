@@ -3,17 +3,17 @@
 ///////////CONSTRUCTORS////////////
 ClapTrap::ClapTrap (void) {
 	std::cout << "ClapTrap default constructor called" << std::endl;
-	_hit_points = 50;
-	_energy_points = 30;
-	_attack_damage = 10;
+	_hit_points = 10;
+	_energy_points = 10;
+	_attack_damage = 0;
 }
 
 ClapTrap::ClapTrap (std::string name) {
 	std::cout << "ClapTrap constructor called for " << name << std::endl;
 	_name = name;
-	_hit_points = 50;
-	_energy_points = 30;
-	_attack_damage = 10;
+	_hit_points = 10;
+	_energy_points = 10;
+	_attack_damage = 0;
 }
 
 ClapTrap::ClapTrap (const ClapTrap &original) {
@@ -36,7 +36,7 @@ ClapTrap::~ClapTrap (void) {
 }
 
 ///////SUBJECT MEMBER FUNCTIONS////////
-void ClapTrap::attack(const std::string& target) {
+void ClapTrap::attack(const std::string target) {
 	if (_energy_points > 0) {
 		_energy_points--;
 		std::cout << "Trap " << _name << " attacks " << target
@@ -46,14 +46,13 @@ void ClapTrap::attack(const std::string& target) {
 	else if (_energy_points < 1)
 		std::cout<< "Trap " << _name << " has no energy left to attack "
 			<< std::endl;
+	else if (_hit_points <= 0)
+		std::cout<< "ClapTrap " << _name << " is dead!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
-		std::cout << "Ouch! Trap " << _name << " suffered "<<
-		(signed int)amount << " points of damage! Before he had "
-		<< _hit_points << " hit points and now he has " <<
-		(signed int)_hit_points - (signed int)amount << " hit points"
-		<< std::endl;
+		std::cout << "ClapTrap " << _name << " received "
+			<< (signed int)amount << " points of damage!" << std::endl;
 		_hit_points = _hit_points - (signed int)amount;
 }
 
@@ -62,17 +61,15 @@ void ClapTrap::beRepaired(unsigned int amount) {
 	{
 		std::cout << "Trap " << _name << " is dead, game over for him!"
 			<< std::endl;
-	return;
 	}
 	else if (_energy_points > 0) {
-		std::cout << "Trap " << _name << " got some repairs of " <<
-		amount << " hit points! He know has " << _hit_points + amount
-		<< " hit points" << std::endl;
 		_energy_points--;
 		_hit_points = _hit_points + amount;
+		std::cout << "ClapTrap " << _name << " repaired "
+			<< amount << " points back." << std::endl;
 	}
-	else if (_energy_points < 1)
-		std::cout << "Trap " << _name << " has no energy left to repair itself!"
+	else
+		std::cout<< "ClapTrap " << _name << " has no energy left to be repaired "
 			<< std::endl;
 }
 

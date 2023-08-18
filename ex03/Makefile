@@ -8,7 +8,7 @@ SRCS		=	ClapTrap.cpp \
 				ScavTrap.cpp \
 				main.cpp
 
-CXXFLAGS	=	-Wall -Wextra -Werror -g -std=c++98 #-fsanitize=address
+CXXFLAGS	=	-Wall -Wextra -Werror -Wshadow -g -std=c++98 #-fsanitize=address
 
 RM			=	rm -f
 

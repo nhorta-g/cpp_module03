@@ -15,8 +15,9 @@ class DiamondTrap: public ScavTrap, public FragTrap {
 		DiamondTrap (const std::string name);
 
 		void whoAmI(void);
+		void myStatus(void);
 
-	private:
+	protected:
 		std::string _name;
 };
 #endif

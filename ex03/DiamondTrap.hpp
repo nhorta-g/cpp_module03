@@ -5,7 +5,7 @@
 # include "ScavTrap.hpp"
 # include "FragTrap.hpp"
 
-class DiamondTrap: public ScavTrap, public FragTrap {
+class DiamondTrap: public FragTrap, public ScavTrap {
 	public:
 		DiamondTrap (void);
 		~DiamondTrap (void);
@@ -17,7 +17,10 @@ class DiamondTrap: public ScavTrap, public FragTrap {
 		void whoAmI(void);
 		void myStatus(void);
 
-	protected:
+	private:
 		std::string _name;
+		using FragTrap::_hit_points;
+		using FragTrap::_attack_damage;
+		using ScavTrap::_energy_points;
 };
 #endif

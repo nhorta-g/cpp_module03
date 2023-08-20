@@ -11,7 +11,5 @@ class ScavTrap: virtual public ClapTrap {
 		ScavTrap (const ScavTrap& original);
 		ScavTrap &operator = (const ScavTrap& original);
 		void guardGate(void);
-	private:
-
 };
 #endif

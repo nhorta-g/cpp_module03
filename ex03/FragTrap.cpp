@@ -10,7 +10,7 @@ FragTrap::FragTrap(void) {
 		<< _name << std::endl;
 }
 
-FragTrap::FragTrap(const std::string name) {
+FragTrap::FragTrap(const std::string name) : ClapTrap(name) {
 	_name = name;
 	_hit_points = 100;
 	_energy_points = 100;
@@ -19,12 +19,10 @@ FragTrap::FragTrap(const std::string name) {
 		<< _name << std::endl;
 }
 
-FragTrap::FragTrap (const FragTrap& original) : ClapTrap(original) {
+FragTrap::FragTrap (const FragTrap& original) : ClapTrap(original._name) {
 	std::cout << "FragTrap copy constructor called for: " <<
 		_name << std::endl;
-	_hit_points = original.getHitPoints();
-	_energy_points = original.getEnergyPoints();
-	_attack_damage = original.getAttackDamage();
+	*this = original;
 }
 
 FragTrap& FragTrap::operator = (const FragTrap &original) {
